@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderFragment"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_marginHorizontal="31dp">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Ticket"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <Spinner
+        android:id="@+id/spinner_ticket"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/rounded_spinner"
+        android:paddingLeft="25dp"/>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:text="Buy Ticket"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button"/>
+
+</LinearLayout>
