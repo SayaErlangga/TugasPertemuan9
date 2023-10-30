@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        title = "TravelApp"
         with(binding){
             val navController = findNavController(R.id.nav_host_fragment)
             bottomNavigationView.setupWithNavController(navController)

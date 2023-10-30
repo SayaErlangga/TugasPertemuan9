@@ -27,7 +27,7 @@
         android:background="@drawable/rounded_spinner"
         android:paddingLeft="25dp"/>
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_buy"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:text="Buy Ticket"

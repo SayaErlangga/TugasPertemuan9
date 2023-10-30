@@ -9,6 +9,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI.navigateUp
 import com.example.tugaspertemuan9.databinding.FragmentOrderBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,7 +40,7 @@ class OrderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding){
             val spinner = view.findViewById<Spinner>(R.id.spinner_ticket)
-            val ticket = arrayOf("Pilih", "Nilai 1", "Nilai 2", "Nilai 3", "Nilai 4")
+            val ticket = arrayListOf("Pilih", "Nilai 1", "Nilai 2", "Nilai 3", "Nilai 4")
             val adapterOrder = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, ticket)
             adapterOrder.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapterOrder
@@ -45,9 +48,10 @@ class OrderFragment : Fragment() {
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     if (spinner.selectedItem == "Pilih") {
-                        (view as TextView).text = ""
+
                     } else {
-                        val selectedValue = ticket[position]
+                        ticket.remove("Pilih")
+                        adapterOrder.notifyDataSetChanged()
                         // Lakukan tindakan lain berdasarkan item yang dipilih
                     }
                 }
@@ -55,6 +59,11 @@ class OrderFragment : Fragment() {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                     // Jika tidak ada yang dipilih, biarkan kosong
                 }
+            }
+
+            buttonBuy.setOnClickListener {
+                findNavController().apply {
+                }.navigateUp()
             }
 
         }
